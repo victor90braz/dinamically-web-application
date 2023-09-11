@@ -1,9 +1,9 @@
 <?php
 
 $business = [
-  "name" => "laracast",
+  "name" => "Dinamically Web Application",
   "cost" => 15,
-  "categories" => ["testing", "php", "javascript"]
+  "categories" => ["Testing", "PHP", "JavaScript"]
 ];
 
 function register () {
