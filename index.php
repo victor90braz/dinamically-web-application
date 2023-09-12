@@ -9,6 +9,12 @@ $routes = [
 
 if (array_key_exists($url, $routes)) {
     require $routes[$url];
+} else {
+    http_response_code(404);
+
+    echo "Sorry. Not Found";
+
+    die();
 }
 
 
