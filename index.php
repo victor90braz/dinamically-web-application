@@ -12,7 +12,7 @@ if (array_key_exists($url, $routes)) {
 } else {
     http_response_code(404);
 
-    echo "Sorry. Not Found";
+    echo "Sorry. Page Not Found.";
 
     die();
 }
