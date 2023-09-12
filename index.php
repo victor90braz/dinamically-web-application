@@ -1,13 +1,13 @@
 <?php
 
-$url = $_SERVER['REQUEST_URI'];
+$currentURL = $_SERVER['REQUEST_URI'];
 
-if ($url === '/') {
+if ($currentURL === '/') {
     require "./controllers/HomeController.php";
     die();
 }
 
-if ($url === '/about') {
+if ($currentURL === '/about') {
     require "./controllers/AboutController.php";
     die();
 }
