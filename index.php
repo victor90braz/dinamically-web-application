@@ -2,16 +2,13 @@
 
 $url = parse_url($_SERVER['REQUEST_URI'])["path"];
 
-echo $url;
+$routes = [
+    "/" => "./controllers/HomeController.php",
+    "/about" => "./controllers/AboutController.php",
+];
 
-if ($url === '/') {
-    require "./controllers/HomeController.php";
-    die();
-}
-
-if ($url === '/about') {
-    require "./controllers/AboutController.php";
-    die();
+if (array_key_exists($url, $routes)) {
+    require $routes[$url];
 }
 
 
