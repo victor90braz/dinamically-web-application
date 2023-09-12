@@ -7,14 +7,18 @@ $routes = [
     "/about" => "./controllers/AboutController.php",
 ];
 
-if (array_key_exists($url, $routes)) {
-    require $routes[$url];
-} else {
+function abort() {
     http_response_code(404);
 
     require 'views/404.php';
 
-    die();
+    exit();
+}
+
+if (array_key_exists($url, $routes)) {
+    require $routes[$url];
+} else {
+    abort();
 }
 
 
