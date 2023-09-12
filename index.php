@@ -11,12 +11,17 @@ function abort() {
     http_response_code(404);
 
     require 'views/404.php';
+    die();
 }
 
-if (array_key_exists($url, $routes)) {
+function routeToController($url, $routes) {
+
+    if (!array_key_exists($url, $routes)) {
+        abort();
+    }
+
     require $routes[$url];
-} else {
-    abort();
+
 }
 
-
+routeToController($url, $routes);
