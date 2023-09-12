@@ -1,13 +1,8 @@
-<!-- views/about.php -->
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>About Us</title>
-</head>
-<body>
-    <?php include __DIR__ . '/nav.php'; ?>
+<?php include __DIR__ . '\partials\banner.php'; ?>
+<?php include __DIR__ . '\partials\nav.php'; ?>
+<main>
     <h1>About Us</h1>
     <p>Learn more about our company here.</p>
-</body>
-</html>
+</main>
+<?php include __DIR__ . '/partials/footer.php'; ?>
+
