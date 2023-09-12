@@ -7,6 +7,8 @@ $routes = [
     "/about" => "./controllers/AboutController.php",
 ];
 
+routeToController($url, $routes);
+
 function abort() {
     http_response_code(404);
 
@@ -24,4 +26,4 @@ function routeToController($url, $routes) {
 
 }
 
-routeToController($url, $routes);
+
