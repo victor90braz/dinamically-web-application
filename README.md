@@ -39,5 +39,3 @@ echo "<pre>";
 echo json_encode($posts, JSON_PRETTY_PRINT);
 echo "</pre>";
 ```
-
-This README provides instructions for setting up Laravel with Laragon, using PHP in the terminal, and an example of how to perform a database query in PHP and display the results in a human-readable format.
