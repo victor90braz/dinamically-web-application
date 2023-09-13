@@ -3,39 +3,16 @@
 include __DIR__ . "/router/router.php";
 
 
-class Person {
-  private $name;
-  private $age;
+$dsn = "mysql:host=localhost;port=3306;dbname=laracast;user=root;charset=utf8mb4";
+$pdo = new PDO($dsn);
 
-  public function __construct($name, $age) {
-      $this->name = $name;
-      $this->age = $age;
-  }
+$statement = $pdo->prepare("SELECT * from posts");
+$statement->execute();
 
-  public function getName() {
-      return $this->name;
-  }
+$posts = $statement->fetchAll();
 
-  public function getAge() {
-      return $this->age;
-  }
-
-  public function breathe() {
-      return "{$this->name} is breathing...";
-  }
-}
-
-// Create a Person object
-$victor = new Person("Victor", 32);
-
-// Get the person's age and breathing message
-$age = $victor->getAge();
-$breathingMessage = $victor->breathe();
-
-// Display information about the person
-echo "{$breathingMessage} Age: {$age}";
-
-
-
+echo "<pre>";
+var_dump($posts);
+"</pre>";
 
 
