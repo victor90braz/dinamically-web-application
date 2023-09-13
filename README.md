@@ -24,3 +24,10 @@
   ```sh
   PHP -S localhost:8888
   ```
+
+$dataBase = new DataBase();
+$posts = $dataBase->query("SELECT \* from posts")->fetchAll(PDO::FETCH_ASSOC);
+
+echo "<pre>";
+echo json_encode($posts, JSON_PRETTY_PRINT);
+echo "</pre>";
