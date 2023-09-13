@@ -1,6 +1,4 @@
-Your updated README note looks good and includes additional sections for MySQL commands. It provides clear instructions for setting up Laravel with Laragon, using PHP in the terminal, and includes a database query example. The added MySQL commands section is helpful for understanding how to interact with the database.
-
-Here's your updated README note for reference:
+Certainly, here's your updated README note with a comment about the importance of parameterized queries for security when working with user input:
 
 ````markdown
 # Laracasts Course - Session 2
@@ -59,4 +57,24 @@ CREATE TABLE `users` (
 
 SELECT * FROM users WHERE id=2 OR admin=1;
 SELECT * FROM posts WHERE id=2 OR id=1;
+```
+
+### Important Security Note:
+
+When working with user input in SQL queries, always use parameterized queries to prevent SQL injection attacks. For example:
+
+```php
+$query = "SELECT * FROM posts WHERE id=?";
+$id = $_GET['id'];
+$posts = $dataBase->query($query, [$id])->fetch();
+```
+
+By using parameterized queries, you ensure that user input is properly sanitized, enhancing the security of your application.
+
+```php
+public function query($query, $params = []) {
+    $statement = $this->connection->prepare($query);
+    $statement->execute($params);
+    return $statement;
+}
 ```
