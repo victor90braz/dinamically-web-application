@@ -8,9 +8,11 @@ $config = require __DIR__ . "/config/config.php";
 
 $dataBase = new DataBase($config["dataBase"]);
 
+
+$query = "SELECT * from posts where id= ?";
 $id = $_GET['id'];
 
-$posts = $dataBase->query("SELECT * from posts where id={$id}")->fetch();
+$posts = $dataBase->query($query,[$id])->fetch();
 
 echo $posts['title'];
 printArray($_GET['id']);
