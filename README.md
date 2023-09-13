@@ -1,7 +1,5 @@
-Certainly, here's your README note with all the information combined into one message:
-
 ````markdown
-# Session 2
+# Laracasts Course - Session 2
 
 GitHub Repository: [Dynamically Web Application](https://github.com/victor90braz/dinamically-web-application)
 
