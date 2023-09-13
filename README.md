@@ -1,3 +1,6 @@
+Certainly, here's your README note with all the information combined into one message:
+
+````markdown
 # Session 2
 
 GitHub Repository: [Dynamically Web Application](https://github.com/victor90braz/dinamically-web-application)
@@ -19,3 +22,22 @@ GitHub Repository: [Dynamically Web Application](https://github.com/victor90braz
   ```sh
   php -h
   ```
+````
+
+- **Start a Local PHP Server:**
+  ```sh
+  php -S localhost:8888
+  ```
+
+## Database Query Example:
+
+```php
+$dataBase = new DataBase();
+$posts = $dataBase->query("SELECT * FROM posts")->fetchAll(PDO::FETCH_ASSOC);
+
+echo "<pre>";
+echo json_encode($posts, JSON_PRETTY_PRINT);
+echo "</pre>";
+```
+
+This README provides instructions for setting up Laravel with Laragon, using PHP in the terminal, and an example of how to perform a database query in PHP and display the results in a human-readable format.
