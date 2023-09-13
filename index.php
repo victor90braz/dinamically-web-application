@@ -1,27 +1,7 @@
 <?php
 
 include __DIR__ . "/router/router.php";
-
-
-class DataBase {
-
-  public $connection;
-
-  public function __construct() {
-    $dsn = "mysql:host=localhost;port=3306;dbname=laracast;user=root;charset=utf8mb4";
-
-    $this->connection = new PDO($dsn);
-  }
-
-  public function query ($query) {
-
-    $statement = $this->connection->prepare($query);
-    $statement->execute();
-
-    return $statement;
-  }
-
-}
+include __DIR__ . "/data/DataBase.php";
 
 $dataBase = new DataBase();
 $posts = $dataBase->query("SELECT * from posts")->fetchAll(PDO::FETCH_ASSOC);
