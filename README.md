@@ -1,5 +1,3 @@
-Certainly, here's your README note with all the information combined into one message:
-
 ````markdown
 # Session 2
 
