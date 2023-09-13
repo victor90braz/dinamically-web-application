@@ -8,7 +8,6 @@ $config = require __DIR__ . "/config/config.php";
 
 $dataBase = new DataBase($config["dataBase"]);
 
-
 $query = "SELECT * from posts where id= ?";
 $id = $_GET['id'];
 
