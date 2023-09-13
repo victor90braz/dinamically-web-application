@@ -2,8 +2,8 @@
 
 include __DIR__ . "/router/router.php";
 include __DIR__ . "/data/DataBase.php";
-include __DIR__ . "/config/config.php";
 
+$config = require __DIR__ . "/config/config.php";
 $dataBase = new DataBase($config);
 $posts = $dataBase->query("SELECT * from posts")->fetchAll();
 
