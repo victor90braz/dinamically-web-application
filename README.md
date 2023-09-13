@@ -1,5 +1,5 @@
 ````markdown
-# Session 2
+# Laracasts Course - Session 2
 
 GitHub Repository: [Dynamically Web Application](https://github.com/victor90braz/dinamically-web-application)
 
