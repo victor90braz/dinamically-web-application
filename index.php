@@ -4,12 +4,16 @@ include __DIR__ . "/router/router.php";
 
 
 class DataBase {
+  public $connection;
+
+  public function __construct() {
+    $dsn = "mysql:host=localhost;port=3306;dbname=laracast;user=root;charset=utf8mb4";
+    $this->connection = new PDO($dsn);
+  }
 
   public function getQuery ($query) {
-    $dsn = "mysql:host=localhost;port=3306;dbname=laracast;user=root;charset=utf8mb4";
-    $pdo = new PDO($dsn);
 
-    $statement = $pdo->prepare($query);
+    $statement = $this->connection->prepare($query);
     $statement->execute();
 
     $associativeArray = PDO::FETCH_ASSOC;
