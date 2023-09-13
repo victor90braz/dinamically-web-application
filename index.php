@@ -10,7 +10,7 @@ $dataBase = new DataBase($config["dataBase"]);
 
 $posts = $dataBase->query("SELECT * from posts")->fetchAll();
 
-printArray($post2);
+printArray($posts);
 
 
 
