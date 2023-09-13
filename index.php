@@ -9,7 +9,8 @@ $pdo = new PDO($dsn);
 $statement = $pdo->prepare("SELECT * from posts");
 $statement->execute();
 
-$posts = $statement->fetchAll();
+$associativeArray = PDO::FETCH_ASSOC;
+$posts = $statement->fetchAll($associativeArray);
 
 echo "<pre>";
 echo json_encode($posts, JSON_PRETTY_PRINT);
