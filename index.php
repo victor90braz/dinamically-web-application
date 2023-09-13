@@ -13,9 +13,9 @@ class DataBase {
     $statement->execute();
 
     $associativeArray = PDO::FETCH_ASSOC;
-    $posts = $statement->fetchAll($associativeArray);
+    $data = $statement->fetchAll($associativeArray);
 
-    return $posts;
+    return $data;
   }
 }
 
