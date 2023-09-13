@@ -4,14 +4,18 @@ include __DIR__ . "/router/router.php";
 
 
 class DataBase {
+
   public $connection;
 
-  public function __construct() {
+  public function __construct()
+  {
     $dsn = "mysql:host=localhost;port=3306;dbname=laracast;user=root;charset=utf8mb4";
+
     $this->connection = new PDO($dsn);
   }
 
-  public function getQuery ($query) {
+  public function getQuery ($query)
+  {
 
     $statement = $this->connection->prepare($query);
     $statement->execute();
@@ -27,7 +31,8 @@ $dataBase = new DataBase();
 $query = "SELECT * from posts";
 $posts = $dataBase->getQuery($query);
 
-foreach($posts as $post) {
+foreach($posts as $post)
+{
   echo "<li>{$post['title']}</li>";
 }
 
