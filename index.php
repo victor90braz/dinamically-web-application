@@ -12,7 +12,9 @@ $statement->execute();
 $posts = $statement->fetchAll();
 
 echo "<pre>";
-var_dump($posts);
-"</pre>";
+echo json_encode($posts, JSON_PRETTY_PRINT);
+echo "</pre>";
+
+
 
 
