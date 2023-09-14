@@ -13,6 +13,9 @@ $allPosts = $dataBase->query($posts)->fetchAll();
 
 printArray($allPosts);
 
+
+// remember to add the id to the url
+// http://localhost:8889/?id=2
 $id = $_GET['id'];
 $post = "SELECT * from posts where id= ?";
 $myPost = $dataBase->query($post,[$id])->fetch();
